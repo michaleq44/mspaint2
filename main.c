@@ -4,7 +4,7 @@
 GtkApplication *app;
 int status;
 GtkWidget *window;
-const int WIDTH = 400;
+const int WIDTH = 600;
 const int HEIGHT = 400;
 
 static void activate (GtkApplication* app, gpointer user_data) {
