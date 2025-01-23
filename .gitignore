@@ -2,3 +2,6 @@
 CMakeLists.txt
 *.exe
 /releases
+/releases/*
+/build
+/build*
