@@ -2,19 +2,33 @@
 #define FILE_H
 #endif
 
+#ifndef MAIN_H
+#include "../main.h"
+#endif
 
-#include <gtk/gtk.h>
+extern GtkApplication *app;
+extern int status;
+extern GtkWidget *window, *toolbar, *fixed, *menubar;
+extern const int WIDTH;
+extern const int HEIGHT;
 
-static void hello_world() {
-    GtkWidget *popup, *label;
+static void quit() {
+    g_application_quit(G_APPLICATION(app));
+}
 
-    popup = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(popup), "Hello world!");
+static void filemenu() {
+    GtkWidget *file, *file_menu_label, *quit_btn;
 
-    label = gtk_label_new("<span size=\"36000\">Hello world!</span>");
-    gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
-    gtk_container_add(GTK_CONTAINER(popup), label);
+    file_menu_label = gtk_menu_item_new_with_mnemonic("_File");
+    file = gtk_menu_new();
+    gtk_menu_item_set_submenu(GTK_MENU_ITEM(file_menu_label), file);
 
-    gtk_widget_show_all(popup);
-    gtk_window_activate_focus(GTK_WINDOW(popup));
+    // btns
+
+    quit_btn = gtk_menu_item_new_with_label("Quit");
+    g_signal_connect(quit_btn, "activate", G_CALLBACK(quit), NULL);
+
+    gtk_menu_attach(GTK_MENU(file), quit_btn, 0, 1, 1, 2);
+
+    gtk_container_add(GTK_CONTAINER(menubar), file_menu_label);
 }
