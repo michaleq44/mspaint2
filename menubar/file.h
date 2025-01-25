@@ -28,7 +28,7 @@ static void filemenu() {
     quit_btn = gtk_menu_item_new_with_label("Quit");
     g_signal_connect(quit_btn, "activate", G_CALLBACK(quit), NULL);
 
-    gtk_menu_attach(GTK_MENU(file), quit_btn, 0, 1, 1, 2);
+    gtk_menu_attach(GTK_MENU(file), quit_btn, 0, 1, 0, 1);
 
     gtk_container_add(GTK_CONTAINER(menubar), file_menu_label);
 }

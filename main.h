@@ -31,6 +31,7 @@ static void activate(GtkApplication* app, gpointer user_data) {
     gtk_fixed_put(GTK_FIXED(fixed), menubar, 0, 0);
 
     filemenu();
+    helpmenu();
 
     gtk_widget_show_all(window);
 }
