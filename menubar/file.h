@@ -13,6 +13,7 @@ extern int WIDTH;
 extern int HEIGHT;
 
 static void quit() {
+    window = NULL;
     g_application_quit(G_APPLICATION(app));
 }
 

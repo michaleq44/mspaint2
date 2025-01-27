@@ -1,7 +1,15 @@
-#window {
+window {
     background-color: #dedede;
 }
 
 menu {
     background-color: #ededed;
+}
+
+toolbar {
+    background-color: #cfcfff
+}
+
+drawingarea {
+    background-color: #ffffff;
 }
