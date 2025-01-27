@@ -14,6 +14,8 @@ extern int HEIGHT;
 extern int drawwidth, drawheight;
 extern GdkRGBA fgcolor, bgcolor;
 
+cairo_surface_t *surf;
+
 static gboolean draw_callback(GtkWidget *widget, cairo_t *cr, gpointer data) {
     GtkStyleContext *context;
 
@@ -23,11 +25,14 @@ static gboolean draw_callback(GtkWidget *widget, cairo_t *cr, gpointer data) {
 
     cairo_rectangle(cr, 0, 0, drawwidth, drawheight);
     gdk_cairo_set_source_rgba(cr, &bgcolor);
+
     cairo_fill(cr);
 
     cairo_arc(cr, drawwidth / 2.0, drawheight / 2.0, MIN(drawwidth, drawheight) / 2.0,0, 2 * G_PI);
     gdk_cairo_set_source_rgba(cr, &fgcolor);
     cairo_stroke(cr);
+
+
 
     return TRUE;
 }
@@ -35,6 +40,7 @@ static gboolean draw_callback(GtkWidget *widget, cairo_t *cr, gpointer data) {
 static void da_init() {
     drawing_area = gtk_drawing_area_new();
     gtk_widget_set_size_request(drawing_area, drawwidth, drawheight);
+
     bgcolor.red = 1;
     bgcolor.green = 1;
     bgcolor.blue = 1;

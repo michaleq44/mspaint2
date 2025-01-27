@@ -1,9 +1,14 @@
 window {
-    background-color: #dedede;
+    background-image: url("./windowbg.jpg");
+    background-repeat: repeat;
 }
 
 menu {
     background-color: #ededed;
+}
+
+menubar {
+    background-color: #dedede
 }
 
 toolbar {

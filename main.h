@@ -31,6 +31,7 @@ int drawwidth = 600;
 int drawheight = 400;
 GtkWidget *drawing_area;
 GdkRGBA fgcolor, bgcolor;
+char *current_name;
 
 static void update_window_size() {
     gtk_window_get_size(GTK_WINDOW(window), &WIDTH, &HEIGHT);

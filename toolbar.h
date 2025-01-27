@@ -1,6 +1,5 @@
 #ifndef TOOLBAR_H
 #define TOOLBAR_H
-#include "draw.h"
 #endif
 
 #ifndef MAIN_H
